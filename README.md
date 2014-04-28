@@ -34,7 +34,7 @@ For executing the experiment, you need to have an active EMULab experiment runni
 
 * EMULab experiments managing is not supported in this release
  
-Due to the uncertainty of swapping in/out of experiments in terms of the cost of time and success rate. As forementioned, you can use `emulab/emulab.py` to help you create a compatible experiment automatically though.
+Due to the uncertainty of swapping in/out of experiments in terms of the cost of time and success rate, the support is removed from this release. As forementioned, you can still use `emulab/emulab.py` to help you create a compatible experiment automatically though.
 
 ## License
 
@@ -42,8 +42,8 @@ MIT License, see LICENSE.
 
 ## Authors
 
-Zero Cho <itszero@gatech.edu>
-Tao Zhu <tzhu37@gatech.edu>
-Baiqian Zhang <brian87@gatech.edu>
-Chen Yang <cyang72@gatech.edu>
+Zero Cho <itszero@gatech.edu>    
+Tao Zhu <tzhu37@gatech.edu>    
+Baiqian Zhang <brian87@gatech.edu>    
+Chen Yang <cyang72@gatech.edu>    
 Yi Ding <yiding@gatech.edu>
