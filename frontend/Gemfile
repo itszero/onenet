@@ -1,0 +1,15 @@
+source "https://rubygems.org"
+
+gem 'puma'
+gem 'sinatra'
+
+# CoffeeScript
+gem 'coffee-script'
+gem 'therubyracer'
+gem 'rack-coffee'
+
+# LESS
+gem 'less'
+
+# HAML
+gem 'haml'

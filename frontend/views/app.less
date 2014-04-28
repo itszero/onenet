@@ -1,0 +1,145 @@
+body, html {
+  height: 100%;
+}
+
+.header, .content {
+  width: 768px;
+  margin: 0 auto;
+}
+
+.header-container {
+  background-color: #16399E;
+}
+
+.header {
+  position: relative;
+  color: white;
+  z-index: 1;
+
+  .header-title {
+    display: inline-block;
+    margin-right: 20px;
+
+    .text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 400;
+      font-size: 2em;
+    }
+  }
+
+  .toolbar {
+    padding: 5px;
+    display: inline-block;
+  }
+
+  .toolbar.toolbar-right {
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .toolbar, .buttons-right {
+    .toolbar-button {
+      padding: 3px;
+      border: 1px solid #16399E;
+      width: 30px;
+      height: 30px;
+      line-height: 25px;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid #CCC;
+      }
+
+      &.active {
+        border: 1px solid #FFF;
+      }
+    }
+
+    .separator {
+      width: 1px;
+      margin-left: 0.5em;
+      margin-right: 1em;
+      border-right: 2px solid #7A7A7A;
+      display: inline-block;
+    }
+  }
+}
+
+.button-warn, .button-important {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-warn {
+  background: rgb(223, 117, 20);
+}
+
+.button-important {
+  background: rgb(202, 60, 60);
+}
+
+#canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.drag_line {
+  stroke: #999;
+  stroke-width: 5;
+  pointer-events: none;
+}
+
+.drag_line_hidden {
+  stroke: #999;
+  stroke-width: 0;
+  pointer-events: none;
+}
+
+.node {
+}
+
+.link {
+  stroke: #999;
+  stroke-width: 5;
+  cursor: crosshair;
+}
+
+.link_selected {
+  z-index: 11;
+  stroke: #ff7f0e;
+}
+
+.node_icon {
+  pointer-events: none;
+}
+
+.modal .form-group {
+  margin: 5px;
+}
+
+#editor-exp, #editor-controller {
+  width: 100%;
+  height: 400px;
+  font-size: 16px;
+}
+
+.log-entry {
+  font-family: Monaco;
+
+  .tag { margin-right: 5px; }
+}
+
+.panel-logs {
+  margin-top: 10px;
+  overflow: auto;
+  height: 500px;
+}

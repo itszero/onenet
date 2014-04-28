@@ -1,0 +1,81 @@
+!!!DOCTYPE html
+%html
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}
+    %title Onenet
+    %script{:src => '/bower_components/jquery/dist/jquery.min.js'}
+    %script{:src => '/bower_components/d3/d3.js'}
+    %script{:src => '/bower_components/bootstrap/dist/js/bootstrap.js'}
+    %script{:src => '/bower_components/mustache/mustache.js'}
+    %script{:src => '/bower_components/ace-builds/src-noconflict/ace.js'}
+    %script{:src => '/bower_components/skulpt/skulpt.min.js'}
+    %script{:src => '/js/app.js'}
+    %script{:src => '/js/controller.js'}
+    %script{:src => '/js/dashboard.js'}
+    %script{:src => '/js/model.js'}
+    %script{:src => '/js/template.js'}
+    %script{:src => '/js/node_mouse_gesture_handler.js'}
+    %script{:src => '/js/link_mouse_gesture_handler.js'}
+    %link{:href => '/bower_components/pure/base-min.css', :type => 'text/css', :media => 'screen', :rel => 'stylesheet'}
+    %link{:href => '/bower_components/bootstrap/dist/css/bootstrap.min.css', :type => 'text/css', :media => 'screen', :rel => 'stylesheet'}
+    %link{:href => '/webfonts/ss-standard.css', :rel => 'stylesheet'}
+    %link{:href => '/css/app.css', :type => 'text/css', :media => 'screen', :rel => 'stylesheet'}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Josefin+Sans:300', :rel => 'stylesheet', :type => 'text/css'}
+  %body
+    .header-container
+      .header
+        .header-title
+          .text Onenet
+        .toolbar
+          .toolbar-button.active{:"data-toggle" => 'toggle', :'data-mode' => 'cursor'}
+            %i.ss-cursor
+          .separator="&nbsp;"
+          .toolbar-button{:"data-toggle" => 'toggle', :'data-mode' => 'host'}
+            %i.ss-desktop
+          .toolbar-button{:"data-toggle" => 'toggle', :'data-mode' => 'switch'}
+            %i.ss-globe
+          .toolbar-button{:"data-toggle" => 'toggle', :'data-mode' => 'link'}
+            %i.ss-connection
+        .toolbar.toolbar-right
+          .toolbar-button.button-warn{:'data-action' => 'clear'}
+            %i.ss-trash
+          .toolbar-button.button-important{:'data-toggle' => 'modal', :'data-target' => '#onenet-deploy-modal'}
+            %i.ss-uploadcloud
+    #canvas-container
+    #onenet-modal
+    #onenet-deploy-modal.modal.fade{:role => "dialog"}
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header
+            %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'} &times;
+            %h4.modal-title Deploy Settings
+          .modal-body
+            %ul.nav.nav-tabs
+              %li.active
+                %a{:href => '#edit-tab-exp', :'data-toggle' => 'tab'}="Experiment"
+              %li
+                %a{:href => '#edit-tab-controller', :'data-toggle' => 'tab'}="Controller"
+            .tab-content
+              .tab-pane.active#edit-tab-exp
+                #editor-exp
+              .tab-pane#edit-tab-controller
+                #editor-controller
+          .modal-footer
+            %button.btn.btn-primary.onenet-btn-deploy{:type => 'button'} Deploy
+    #onenet-deploy-status.modal.fade{:role => 'dialog', :'data-backdrop' => 'static', :'data-keyboard' => 'false'}
+      .modal-dialog.modal-lg
+        .modal-content
+          .modal-header
+            %button.close{:type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'} &times;
+            %h4.modal-title
+              Experiment Dashboard
+              %span.ds-exp-status.label.label-warning="Running"
+          .modal-body
+            #status-board
+              %ul.nav.nav-pills.nav-logs
+                %li.active
+                  %a{:href => '#', :'data-host' => 'all'}="all"
+              .panel-logs
+          .modal-footer
+            Last Updated:
+            %span.ds-exp-last-update -
